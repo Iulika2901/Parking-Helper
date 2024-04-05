@@ -3,37 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parking Finder</title>
-    <style>
-        /* Stiluri CSS */
-        body {
-            font-family: Arial, sans-serif;
-            color: #fff;
-            background-color: #000;
-            padding: 20px;
-        }
-        h1 {
-            color: #ffd700;
-            text-align: center;
-        }
-        p {
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-    </style>
+    Parking Finder
+
 </head>
 <body>
     <div class="container">
