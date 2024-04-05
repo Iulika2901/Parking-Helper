@@ -18,7 +18,7 @@
         <p>
             Users can simply visit the website, and the app will automatically detect their location (geolocation API) and display the nearest parking options. They can also reload the location if needed.
         </p>
-        <img src="website_preview.png" alt="Website Preview">
+        <img src="https://www.p92.com/binaries/content/gallery/p92website/technologies/htmlcssjs-details.png" alt="Used for create the site:">
         <p>
             Parking Finder can be further improved by adding additional features such as real-time parking availability, integration with navigation apps, and user reviews for parking facilities. Feedback from users can help identify areas for enhancement and refinement.
         </p>
