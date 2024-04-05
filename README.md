@@ -7,6 +7,7 @@
 
 </head>
 <body>
+     <img src="https://uploads-ssl.webflow.com/6152ca2f0207ad3b79b0c5da/623bc61ca6ef648246e25f55_The%20Parking%20Helper%20Cover%20Photo%20Updated-p-2000.png" alt="">
     <div class="container">
         <h1>Welcome to Parking Finder</h1>
         <p>
