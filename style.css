@@ -1,0 +1,29 @@
+/* Stiluri CSS */
+.blue {
+    color: blanchedalmond;
+}
+body {
+    color: white;
+    background-color: black;
+    background-image: url("image1.png");
+    background-size: cover;
+}
+.h2-font {
+    font-size: 2em;
+    color: blanchedalmond;
+}
+
+h2 {
+    color: blanchedalmond;
+}
+div {
+    display: inline-block;
+}
+a {
+    background-color: black;
+    display: inline-block;
+    padding: 5px 15px;
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+}
