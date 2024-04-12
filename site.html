@@ -3,38 +3,26 @@
 <head>
     <title></title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Stiluri CSS */
-        .blue { 
-            color: blanchedalmond;
-        }
-        body { 
-            color: white;
-            background-color: black;
-            background-image: url("image1.png");
-            background-size: cover;
-        }
-        h2 { 
-            color: blanchedalmond;
-        }
-        div {
-            display: inline-block;
-        }
-        a {
-            background-color: black;
-            display: inline-block;
-            padding: 5px 15px;
-            color: white;
-            text-decoration: none;
-            border: 1px solid white;
-        }
-    </style>
+   
 </head>
 <body>
+    <div id="nameInput">
+        <label for="name"> <h1>What type of autovehicule do you have?</h1></label>
+        <input type="text" id="name" name="name">
+          <!--<button onclick="showName()">Submit</button>-->
+        <label for="size"> <h1>What are the size of your car?</h1>  <h3>(ex: 1.5mX5.1m) </h3></label>
+        <input type="text" id="size" name="size">          
+      <button onclick="showName()">Submit</button>
+    </div>
+    <div id="box">
+        <h2> Welcome back, </h2>
+        <p id="outputName"></p>
+    </div>
 <div>
     <!-- Continut HTML -->
-    <ol> 
+    <ol>
         <li>
+           
             <h2 class="blue">I located you in Cluj, on George Baritiu Boulevard. The nearest parking lots, with available parking spaces, are:</h2>
             <a href="#" class="button" id="reloadButton">Reload location</a> <!-- Adaugare un ID la buton -->
             <!-- Continut listei cu parcări -->
@@ -43,7 +31,7 @@
                 <li>
                     <h2>Parking Primăverii 20</h2> <img src="paid.png" width="150"  style="float: right;  margin-right: 700px; margin-top: 0px;">
                     <ul>
-                        <li>381 parking spaces,</li>   
+                        <li>381 parking spaces,</li>  
                         <li>15 spaces for disabled persons</li>
                         <li>2 charging stations</li>
                         <li>41 visitor parking spaces</li>
@@ -51,7 +39,7 @@
                     </ul>
                 </li>
                 <li>
-                    <h2>Parking Primăverii 8</h2> 
+                    <h2>Parking Primăverii 8</h2>
                     <ul>
                         <li>285 parking spaces</li>
                         <li>7 spaces for disabled persons</li>
@@ -64,7 +52,7 @@
                 <li>
                     <h2>Parking Baisoara</h2>    <img src="paid.png" width="150"  style="float: right;  margin-right: 700px; margin-top: 100px;">
                     <ul>
-                        <li>358 parking spaces</li> 
+                        <li>358 parking spaces</li>
                         <li>25 visitor parking spaces</li>
                         <li>2 spaces for disabled persons</li>
                         <li>48 bicycle parking spaces</li>
@@ -82,49 +70,9 @@
             </ol>
         </li>
     </ol>
-</div>
 
-<!-- Script JavaScript -->
-<script defer>
-    // Funcție pentru evenimentul de click pe buton
-    document.getElementById('reloadButton').addEventListener('click', function() {
-        alert('Searching for your location...'); // Notificare că pagina va fi reîncărcată
-        location.reload(); // Funcție pentru a reîncărca pagina
-    });
 
-    // Definirea clasei UserCar
-    class UserCar {
-        constructor() {
-            this.name = undefined; // Inițializăm numele cu undefined
-        }
-
-        setName(name) {
-            this.name = name;
-        }
-
-        speak() {
-            if (this.name === undefined) {
-                this.name = "Vehicle"; // Dacă numele este nedefinit, folosim "Vehicle"
-            }
-            
-            // Creăm un element de tip h6
-            const message = document.createElement('h6');
-            // Setăm textul mesajului
-            message.textContent = `There are more parking places for your ${this.name} at Parking Primaverii.`;
-            // Setăm culoarea textului în alb
-            message.style.color = 'white'; 
-            // Găsim elementul în care vrem să inserăm mesajul
-            const targetElement = document.getElementById('messageContainer');
-            // Adăugăm mesajul la elementul target
-            targetElement.appendChild(message);
-        }
-    }
-
-    // Creăm o instanță a clasei și apelăm funcțiile
-    const thing = new UserCar();
-    thing.setName("Motorbike");
-    thing.speak();
-</script>
+    <script src="steps.js"></script>
 
 </body>
 </html>
