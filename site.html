@@ -12,7 +12,7 @@
           <!--<button onclick="showName()">Submit</button>-->
         <label for="size"> <h1>What are the size of your car?</h1>  <h3>(ex: 1.5mX5.1m) </h3></label>
         <input type="text" id="size" name="size">          
-      <button onclick="showName()">Submit</button>
+        <button onclick="showName()">Submit</button>>
     </div>
     <div id="box">
         <h2> Welcome back, </h2>
@@ -20,18 +20,20 @@
     </div>
 <div>
     <!-- Continut HTML -->
-    <ol>
+    <ol> 
         <li>
-           
             <h2 class="blue">I located you in Cluj, on George Baritiu Boulevard. The nearest parking lots, with available parking spaces, are:</h2>
             <a href="#" class="button" id="reloadButton">Reload location</a> <!-- Adaugare un ID la buton -->
+            <ol id="parkingList">
+                <!-- Elemente listă vor fi adăugate dinamic aici -->
+            </ol>
             <!-- Continut listei cu parcări -->
             <ol>
                 <!-- Elemente listă -->
                 <li>
-                    <h2>Parking Primăverii 20</h2> <img src="paid.png" width="150"  style="float: right;  margin-right: 700px; margin-top: 0px;">
+                    <h2>Parking P-ta Cipariu 20</h2> <img src="paid.png" width="150"  style="float: right;  margin-right: 700px; margin-top: 0px;">
                     <ul>
-                        <li>381 parking spaces,</li>  
+                        <li>381 parking spaces,</li>   
                         <li>15 spaces for disabled persons</li>
                         <li>2 charging stations</li>
                         <li>41 visitor parking spaces</li>
@@ -39,7 +41,7 @@
                     </ul>
                 </li>
                 <li>
-                    <h2>Parking Primăverii 8</h2>
+                    <h2>Parking Primaverii 8</h2> 
                     <ul>
                         <li>285 parking spaces</li>
                         <li>7 spaces for disabled persons</li>
@@ -52,14 +54,14 @@
                 <li>
                     <h2>Parking Baisoara</h2>    <img src="paid.png" width="150"  style="float: right;  margin-right: 700px; margin-top: 100px;">
                     <ul>
-                        <li>358 parking spaces</li>
+                        <li>358 parking spaces</li> 
                         <li>25 visitor parking spaces</li>
                         <li>2 spaces for disabled persons</li>
                         <li>48 bicycle parking spaces</li>
                     </ul>
                 </li>
                 <li>
-                    <h2>Parking Primăverii F.N.</h2>
+                    <h2>Parking Floresti F.N.</h2>
                     <ul>
                         <li>445 parking spaces</li>
                         <li>0 visitor parking spaces</li>
