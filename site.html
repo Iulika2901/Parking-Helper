@@ -1,80 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Pagina cu parcări</title>
     <link rel="stylesheet" href="style.css">
-   
 </head>
 <body>
     <div id="nameInput">
-        <label for="name"> <h1>What type of autovehicule do you have?</h1></label>
+        <label for="name"> <h1>Ce tip de autovehicul ai?</h1></label>
         <input type="text" id="name" name="name">
-          <!--<button onclick="showName()">Submit</button>-->
-        <label for="size"> <h1>What are the size of your car?</h1>  <h3>(ex: 1.5mX5.1m) </h3></label>
+        <label for="size"> <h1>Care sunt dimensiunile mașinii tale?</h1>  <h3>(ex: 1.5m X 5.1m)</h3></label>
         <input type="text" id="size" name="size">          
-        <button onclick="showName()">Submit</button>>
+        <button onclick="showName()">Trimite</button>
     </div>
     <div id="box">
-        <h2> Welcome back, </h2>
+        <h2> Bine ai revenit, </h2>
         <p id="outputName"></p>
     </div>
 <div>
-    <!-- Continut HTML -->
+    <!-- Lista cu parcări -->
     <ol> 
         <li>
-            <h2 class="blue">I located you in Cluj, on George Baritiu Boulevard. The nearest parking lots, with available parking spaces, are:</h2>
-            <a href="#" class="button" id="reloadButton">Reload location</a> <!-- Adaugare un ID la buton -->
+            <h2 class="blue">Te-am localizat în Cluj, pe Bulevardul George Barițiu. Cele mai apropiate parcări, cu locuri de parcare disponibile, sunt:</h2>
+            <a href="#" class="button" id="reloadButton" onclick="reload()">Reîncarcă locația</a>
             <ol id="parkingList">
-                <!-- Elemente listă vor fi adăugate dinamic aici -->
+                <!-- Aici vor fi adăugate dinamic elementele listei cu parcări -->
             </ol>
-            <!-- Continut listei cu parcări -->
+            <!-- Conținutul listei cu parcări -->
             <ol>
-                <!-- Elemente listă -->
+                <!-- Parcare 1 -->
                 <li>
-                    <h2>Parking P-ta Cipariu 20</h2> <img src="paid.png" width="150"  style="float: right;  margin-right: 700px; margin-top: 0px;">
-                    <ul>
-                        <li>381 parking spaces,</li>   
-                        <li>15 spaces for disabled persons</li>
-                        <li>2 charging stations</li>
-                        <li>41 visitor parking spaces</li>
-                        <li>32 bicycle parking spaces</li>
-                    </ul>
+                   <div class="parking-item" data-original-name="Parcare P-ta Cipariu 20">
+                       <img src="paid.png" width="150">
+                       <h2>Parcare P-ta Cipariu 20</h2>
+                       <ul>
+                           <li>381 locuri de parcare</li>   
+                           <li>15 locuri pentru persoane cu dizabilități</li>
+                           <li>2 stații de încărcare</li>
+                           <li>41 locuri de parcare pentru vizitatori</li>
+                           <li>32 locuri de parcare pentru biciclete</li>
+                       </ul>
+                   </div>
                 </li>
+                <!-- Parcare 2 -->
                 <li>
-                    <h2>Parking Primaverii 8</h2> 
-                    <ul>
-                        <li>285 parking spaces</li>
-                        <li>7 spaces for disabled persons</li>
-                        <li>5 charging stations</li>
-                        <li>22 visitor parking spaces</li>
-                        <li>17 motorcycle parking spaces</li>
-                        <li>52 bicycle parking spaces</li>
-                    </ul>
+                    <div class="parking-item" data-original-name="Parcare Primăverii 8">
+                        <img src="paid.png" width="150">
+                        <h2>Parcare Primăverii 8</h2>
+                        <ul>
+                            <li>285 locuri de parcare</li>
+                            <li>7 locuri pentru persoane cu dizabilități</li>
+                            <li>5 stații de încărcare</li>
+                            <li>22 locuri de parcare pentru vizitatori</li>
+                            <li>17 locuri de parcare pentru motociclete</li>
+                            <li>52 locuri de parcare pentru biciclete</li>
+                        </ul>
+                    </div>
                 </li>
+                <!-- Parcare 3 -->
                 <li>
-                    <h2>Parking Baisoara</h2>    <img src="paid.png" width="150"  style="float: right;  margin-right: 700px; margin-top: 100px;">
-                    <ul>
-                        <li>358 parking spaces</li> 
-                        <li>25 visitor parking spaces</li>
-                        <li>2 spaces for disabled persons</li>
-                        <li>48 bicycle parking spaces</li>
-                    </ul>
+                    <div class="parking-item" data-original-name="Parcare Baisoara">
+                        <img src="paid.png" width="150">
+                        <h2>Parcare Baisoara</h2>
+                        <ul>
+                            <li>358 locuri de parcare</li> 
+                            <li>25 locuri de parcare pentru vizitatori</li>
+                            <li>2 locuri pentru persoane cu dizabilități</li>
+                            <li>48 locuri de parcare pentru biciclete</li>
+                        </ul>
+                    </div>
                 </li>
+                <!-- Parcare 4 -->
                 <li>
-                    <h2>Parking Floresti F.N.</h2>
-                    <ul>
-                        <li>445 parking spaces</li>
-                        <li>0 visitor parking spaces</li>
-                        <li>48 bicycle parking spaces</li>
-                        <li>3 spaces for persons with disabilities</li>
-                    </ul>
+                    <div class="parking-item" data-original-name="Parcare Florești F.N.">
+                        <img src="paid.png" width="150">
+                        <h2>Parcare Florești F.N.</h2>
+                        <ul>
+                            <li>445 locuri de parcare</li>
+                            <li>0 locuri de parcare pentru vizitatori</li>
+                            <li>48 locuri de parcare pentru biciclete</li>
+                            <li>3 locuri pentru persoane cu dizabilități</li>
+                        </ul>
+                    </div>
                 </li>
             </ol>
         </li>
     </ol>
 
-
     <script src="steps.js"></script>
-
 </body>
 </html>
