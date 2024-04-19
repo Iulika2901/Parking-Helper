@@ -142,7 +142,31 @@ var outputElement = document.getElementById("outputName");
 var a=10;
 
 
+const buton = document.getElementById('buton');
+const name = document.getElementById('name');
 
+function traffic() {
+  fetch('https://www.politiadefrontiera.ro/ro/traficonline/?vt=1&vw=2')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      name.innerHTML = `<em>${data}</em>`; // Înlocuiți 'data' cu datele dorite din răspunsul JSON
+    })
+    .catch(error => {
+      console.error('Eroare:', error);
+      name.innerHTML = `<em>Eroare la încărcare</em>`;
+    });
+}
+
+buton.addEventListener('click', (e) => {
+  e.preventDefault();
+  name.innerHTML = `<em>Loading...</em>`;
+  const random = Math.ceil(Math.random() * 10); // Am corectat eroarea de scriere și de formulă pentru obținerea unui număr aleatoriu
+  traffic(); // Apelul funcției 'traffic' pentru a face cererea la apăsarea butonului
+});
+}
+
+}
 
 
 const avegarge_parking = (list) =>
