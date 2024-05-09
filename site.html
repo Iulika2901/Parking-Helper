@@ -9,21 +9,22 @@
         <button onclick="showDate()">Show date:</button>
         <label for="name"><h1>What type of vehicle do you have?</h1></label>
         <input type="text" id="name" name="name">
-        <label for="size"><h1>What are the dimensions of your vehicle?</h1><h3>(e.g., 1.5m X 5.1m)</h3></label>
+        <!-- site for dimenssion -->
+        <label for="size"><h1> <a href="https://www.automobiledimension.com/">What are the dimensions of your vehicle? Click here to find how measure your car dimensions</a></h1><h3>(e.g., 1.5m X 5.1m)</h3></label>
         <input type="text" id="size" name="size">          
         <button onclick="showName()">Submit</button>
     </div>
     <div id="box">
-        <h2>Welcome back,</h2>
+        <h1>Welcome back,</h1>
         <p id="outputName"></p>
     </div>
 <div>
     <!-- List of parking spots -->
     <ol> 
         <li>
-            <h2 class="blue">You are located in Cluj, on George Baritiu Boulevard. The nearest parking lots, with available parking spaces, are:</h2>
+            <h1 class="blue" id="infos">You are located in Cluj, on George Baritiu Boulevard. The nearest parking lots, with available parking spaces, are:</h1>
             <a href="#" class="button" id="reloadButton" onclick="reload()">Reload location</a>
-            <ol id="parkingList">
+            <ol id="parkingList">      <!--id unic-->
                 <!-- Parking spots will be dynamically added here -->
             </ol>
             <!-- Content of the parking list -->
