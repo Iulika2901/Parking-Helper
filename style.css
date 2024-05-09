@@ -1,29 +1,48 @@
-/* Stiluri CSS */
-.blue {
+/* Style CSS */
+.blue {                /* created */
     color: blanchedalmond;
 }
+
 body{
     color: white;
     background-color: black;
     background-image: url("image1.png");
     background-size: cover;
 }
-.h2-font {
+
+#infos{                 /* id = unique for each */
+    text-transform: uppercase;
+}
+
+.h2-font {  
     font-size: 2em;
+    text-transform: upper-case;
     color: blanchedalmond;
 }
 
-h2 {
+h2, i {                   /* redefined multiple items, separated */
     color: blanchedalmond;
+    text-decoration: none;
+    border: 1px solid rgba(228, 228, 218, 0.5);
 }
+
+h2 i{                      /* redefine combo*/
+    text-transform: uppercase;
+}
+
 div {
     display: inline-block;
+    flex-direction: column;
+    align-items: center;
 }
+
 a {
-    background-color: black;
+   text-underline-offset: u;
     display: inline-block;
+    flex-direction: column;
+    align-items: center;
     padding: 5px 15px;
     color: white;
     text-decoration: none;
-    border: 1px solid white;
+   
 }
