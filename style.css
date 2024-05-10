@@ -14,7 +14,15 @@ body{
     text-transform: uppercase;
 }
 
-div.border{border_width:3px; border_color: white;}
+div.border{border_width:3px; 
+border-top-left-radius:5px;
+border-top-right-radius:50%;
+border-both-right-radius:5px;
+border-both-left-radius:50%;
+
+
+
+border_color: white;}
 
 
 .h2-font {  
