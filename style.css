@@ -46,3 +46,9 @@ a {
     text-decoration: none;
    
 }
+
+a:hover{
+color:red;
+}
+
+a:visited{color:white;}
