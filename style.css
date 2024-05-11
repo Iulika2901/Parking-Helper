@@ -14,21 +14,37 @@ body{
     text-transform: uppercase;
 }
 
-div.border{border_width:3px; 
+div.border{border-width:3px; 
 border-top-left-radius:5px;
 border-top-right-radius:50%;
-border-both-right-radius:5px;
-border-both-left-radius:50%;
+border-bottom-right-radius:5px;
+border-bottom-left-radius:50%;
+border-color: white;
+}
 
-
-
-border_color: white;}
-
+/*span. makes width=height*/
 
 .h2-font {  
     font-size: 2em;
     text-transform: upper-case;
     color: blanchedalmond;
+}
+
+
+#box{   /* padding = distance between text and border*/
+width: 200px;
+height:200px;
+border: 1px dashed black;
+padding: 10px 15px 20px 25px;
+display: inline-block; 
+margin: 50px auto 50px auto; /**/
+opacity: 0,5; 
+}
+
+
+#inline {
+    display: inline;
+    max-width: 100px; /* adaptive dimension*/
 }
 
 h2, i {                   /* redefined multiple items, separated */
@@ -42,7 +58,7 @@ h2 i{                      /* redefine combo*/
 }
 
 div {
-    display: inline-block;
+    display: inline;     /* inline = as big as text; inline-block = bigger*/
     flex-direction: column;
     align-items: center;
 }
