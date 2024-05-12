@@ -28,7 +28,14 @@ border-color: white;
     font-size: 2em;
     text-transform: upper-case;
     color: blanchedalmond;
+    text-shadow: 2px 2px 5px black; /*5px=opacity */
 }
+
+.box{
+    display: sticky;  
+    position: relative;
+}
+
 
 
 #box{   /* padding = distance between text and border*/
