@@ -34,10 +34,12 @@ border-color: white;
 #box{   /* padding = distance between text and border*/
 width: 200px;
 height:200px;
-border: 1px dashed black;
+border: 1px dashed blanchedalmond;
 padding: 10px 15px 20px 25px;
 display: inline-block; 
 margin: 50px auto 50px auto; /**/
+outline: 5px solid black;
+outline-offset: 10 px;
 opacity: 0,5; 
 }
 
