@@ -1,0 +1,41 @@
+d-- Create the person table
+CREATE TABLE person (
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    gender VARCHAR(7) NOT NULL,
+    date_of_birth DATE NOT NULL,
+    email VARCHAR(150)
+);
+
+-- Insert 20 users into the person table
+INSERT INTO person (first_name, last_name, gender, date_of_birth, email) VALUES
+('John', 'Doe', 'male', '1985-05-15', 'john.doe@example.com'),
+('Jane', 'Smith', 'female', '1990-07-20', 'jane.smith@example.com'),
+('Alice', 'Johnson', 'female', '1978-09-30', 'alice.johnson@example.com'),
+('Bob', 'Brown', 'male', '1965-12-01', 'bob.brown@example.com'),
+('Charlie', 'Davis', 'male', '2000-02-15', 'charlie.davis@example.com'),
+('Diana', 'Miller', 'female', '1982-04-25', 'diana.miller@example.com'),
+('Edward', 'Wilson', 'male', '1995-11-11', 'edward.wilson@example.com'),
+('Fiona', 'Moore', 'female', '1988-08-08', 'fiona.moore@example.com'),
+('George', 'Taylor', 'male', '1975-03-21', 'george.taylor@example.com'),
+('Hannah', 'Anderson', 'female', '1999-06-17', 'hannah.anderson@example.com'),
+('Ian', 'Thomas', 'male', '1980-10-05', 'ian.thomas@example.com'),
+('Jenna', 'Jackson', 'female', '1992-12-12', 'jenna.jackson@example.com'),
+('Kevin', 'White', 'male', '1987-01-22', 'kevin.white@example.com'),
+('Laura', 'Harris', 'female', '1970-04-30', 'laura.harris@example.com'),
+('Michael', 'Clark', 'male', '1962-09-19', 'michael.clark@example.com'),
+('Nina', 'Lewis', 'female', '1983-07-24', 'nina.lewis@example.com'),
+('Oliver', 'Walker', 'male', '1996-05-06', 'oliver.walker@example.com'),
+('Paula', 'Hall', 'female', '1973-11-14', 'paula.hall@example.com'),
+('Quincy', 'Allen', 'male', '1991-02-28', 'quincy.allen@example.com'),
+('Rachel', 'Young', 'female', '1989-10-18', 'rachel.young@example.com');
+
+
+SELECT * FROM person;
+
+SELECT email FROM person ORDER BY email ASC;
+
+SELECT DISTINCT first_name FROM person ORDER BY first_name DESC;
+
+SELECT * FROM person WHERE (gender = 'female' AND (date_part('year', age(date_of_birth)) > 50 OR date_part('year', age(date_of_birth)) < 18));
