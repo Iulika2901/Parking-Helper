@@ -1,41 +1,128 @@
-d-- Create the person table
+
 CREATE TABLE person (
-    id BIGSERIAL NOT NULL PRIMARY KEY,
+    id BIGSERIAL PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
+    parking_discount INTEGER,
+    car VARCHAR(50) NOT NULL,
+    car_type VARCHAR(50),
+    car_year NUMERIC,
     gender VARCHAR(7) NOT NULL,
+    age INTEGER NOT NULL,
     date_of_birth DATE NOT NULL,
     email VARCHAR(150)
 );
 
--- Insert 20 users into the person table
-INSERT INTO person (first_name, last_name, gender, date_of_birth, email) VALUES
-('John', 'Doe', 'male', '1985-05-15', 'john.doe@example.com'),
-('Jane', 'Smith', 'female', '1990-07-20', 'jane.smith@example.com'),
-('Alice', 'Johnson', 'female', '1978-09-30', 'alice.johnson@example.com'),
-('Bob', 'Brown', 'male', '1965-12-01', 'bob.brown@example.com'),
-('Charlie', 'Davis', 'male', '2000-02-15', 'charlie.davis@example.com'),
-('Diana', 'Miller', 'female', '1982-04-25', 'diana.miller@example.com'),
-('Edward', 'Wilson', 'male', '1995-11-11', 'edward.wilson@example.com'),
-('Fiona', 'Moore', 'female', '1988-08-08', 'fiona.moore@example.com'),
-('George', 'Taylor', 'male', '1975-03-21', 'george.taylor@example.com'),
-('Hannah', 'Anderson', 'female', '1999-06-17', 'hannah.anderson@example.com'),
-('Ian', 'Thomas', 'male', '1980-10-05', 'ian.thomas@example.com'),
-('Jenna', 'Jackson', 'female', '1992-12-12', 'jenna.jackson@example.com'),
-('Kevin', 'White', 'male', '1987-01-22', 'kevin.white@example.com'),
-('Laura', 'Harris', 'female', '1970-04-30', 'laura.harris@example.com'),
-('Michael', 'Clark', 'male', '1962-09-19', 'michael.clark@example.com'),
-('Nina', 'Lewis', 'female', '1983-07-24', 'nina.lewis@example.com'),
-('Oliver', 'Walker', 'male', '1996-05-06', 'oliver.walker@example.com'),
-('Paula', 'Hall', 'female', '1973-11-14', 'paula.hall@example.com'),
-('Quincy', 'Allen', 'male', '1991-02-28', 'quincy.allen@example.com'),
-('Rachel', 'Young', 'female', '1989-10-18', 'rachel.young@example.com');
+
+CREATE TABLE parking_places (
+    id BIGSERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    street VARCHAR(50) NOT NULL,
+    bicycle_places INTEGER,
+    big_car_places INTEGER,
+    small_car_places INTEGER,
+    disabilities_places INTEGER,
+    price NUMERIC
+);
+
+le
+INSERT INTO person (first_name, last_name, gender, date_of_birth, email, car, car_year, age)
+VALUES 
+    ('Popescu', 'Jonha', 'female', '1998-01-01', 'popescu.jonha@example.com', 'Toyota', 2018, 25),
+    ('Yump', 'Jon', 'MALE', '1988-11-01', 'nakj@gmail.com', 'Land Rover', 2015, 35),
+    ('Alex', 'Smith', 'male', '1995-03-15', 'alex.smith@example.com', 'Mini Cooper', 2020, 28),
+    ('Maria', 'Garcia', 'female', '1975-06-24', 'maria.garcia@example.com', 'Dacia Duster', 2019, 48),
+    ('David', 'Jones', 'male', '2000-09-10', 'david.jones@example.com', 'Toyota', 2021, 23),
+    ('Emma', 'Brown', 'female', '1992-12-05', 'emma.brown@example.com', 'Land Rover', 2017, 31),
+    ('James', 'Johnson', 'male', '1980-02-18', 'james.johnson@example.com', 'Mini Cooper', 2019, 44),
+    ('Olivia', 'Williams', 'female', '1985-04-29', 'olivia.williams@example.com', 'Dacia Duster', 2020, 39),
+    ('Liam', 'Miller', 'male', '1990-07-22', 'liam.miller@example.com', 'Toyota', 2016, 33),
+    ('Sophia', 'Davis', 'female', '1998-11-13', 'sophia.davis@example.com', 'Land Rover', 2018, 25),
+    ('William', 'Martinez', 'male', '2002-01-26', 'william.martinez@example.com', 'Mini Cooper', 2021, 22),
+    ('Isabella', 'Hernandez', 'female', '1997-03-30', 'isabella.hernandez@example.com', 'Dacia Duster', 2020, 27),
+    ('Mason', 'Lopez', 'male', '1983-08-14', 'mason.lopez@example.com', 'Toyota', 2017, 40),
+    ('Ava', 'Gonzalez', 'female', '1987-05-09', 'ava.gonzalez@example.com', 'Land Rover', 2016, 37),
+    ('Ethan', 'Wilson', 'male', '1999-12-21', 'ethan.wilson@example.com', 'Mini Cooper', 2018, 24),
+    ('Mia', 'Anderson', 'female', '2001-06-07', 'mia.anderson@example.com', 'Dacia Duster', 2021, 23),
+    ('Michael', 'Thomas', 'male', '1984-11-03', 'michael.thomas@example.com', 'Toyota', 2015, 39),
+    ('Charlotte', 'Taylor', 'female', '1991-09-19', 'charlotte.taylor@example.com', 'Land Rover', 2019, 32),
+    ('Benjamin', 'Moore', 'male', '1996-02-12', 'benjamin.moore@example.com', 'Mini Cooper', 2020, 28),
+    ('Harper', 'Jackson', 'female', '1982-03-07', 'harper.jackson@example.com', 'Dacia Duster', 2018, 42);
+
+SELECT * FROM person;
+
+SELECT email, password FROM person ORDER BY email ASC;
+
+
+SELECT DISTINCT first_name FROM person ORDER BY first_name DESC;
+
+
+SELECT * FROM person WHERE (gender = 'female' AND age > 50) OR (gender = 'female' AND age < 18);
+
+
+SELECT CURRENT_DATE;
+SELECT NOW();
+SELECT NOW()::DATE;
+SELECT NOW()::TIME;
+
+
+UPDATE person SET parking_discount = 
+    CASE 
+        WHEN CURRENT_DATE = '2024-12-24' THEN 50 
+        ELSE 10 
+    END;
+
+
+UPDATE person SET car_type = 
+    CASE 
+        WHEN car LIKE '%Toyota%' THEN 'SUV'
+        WHEN car LIKE '%Land Rover%' THEN 'OFF_ROADER'
+        WHEN car LIKE '%Mini Cooper%' THEN 'MICRO'
+        WHEN car LIKE '%Dacia Duster%' THEN 'CROSSOVER'
+    END;
+
+
+UPDATE person SET car_type = 
+    CASE 
+        WHEN car_year >= 2020 AND car LIKE '%Toyota%' THEN 'ELECTRIC SUV'
+        ELSE 'SUV'
+    END;
+
+
+SELECT car_year, COUNT(*) FROM person GROUP BY car_type ORDER BY car_type;
+SELECT car_year, COUNT(*) FROM person GROUP BY car_type HAVING COUNT(*) > 5 AND car_year > 2000 ORDER BY car_type;
+
+
+SELECT MAX(price) FROM car;
+SELECT ROUND(AVG(price)) FROM car;
+
+UPDATE car SET price = ROUND(AVG(price))
+    WHERE price = (SELECT MAX(price) FROM car);
+
+
+SELECT car_type FROM person GROUP BY car_type;
+SELECT SUM(price) FROM car;
+SELECT make, SUM(price) FROM car GROUP BY car_name;
+
+
+UPDATE car SET discount = 10;
+UPDATE car SET discount = 50 WHERE date_of_birth = NOW()::DATE;
 
 
 SELECT * FROM person;
 
-SELECT email FROM person ORDER BY email ASC;
 
-SELECT DISTINCT first_name FROM person ORDER BY first_name DESC;
+INSERT INTO person (id, first_name, gender) 
+VALUES ('123', 'Omar', 'ann') 
+ON CONFLICT (id) DO NOTHING;
 
-SELECT * FROM person WHERE (gender = 'female' AND (date_part('year', age(date_of_birth)) > 50 OR date_part('year', age(date_of_birth)) < 18));
+INSERT INTO person (id, first_name, gender) 
+VALUES ('123', 'Omar', 'ann') 
+ON CONFLICT (email) DO NOTHING;
+
+INSERT INTO person (id, first_name, gender) 
+VALUES ('123', 'Omar', 'ann') 
+ON CONFLICT (email) DO UPDATE SET email = EXCLUDED.email, last_name = EXCLUDED.last_name;
+
+
+SELECT 1 <= 1;
